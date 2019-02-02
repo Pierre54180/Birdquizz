@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang='fr'>
+	<head>
+		<meta charset='utf-8'>
+		<title>BirdQuizz Game</title>
+	</head>	
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="lib/jquery-3.1.1.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="http://www.oiseaux.net/front/css/oiseaux.net.20170314.css" />	
+	<script type="text/javascript" src="js/bin/materialize.min.js"></script>
+	<script src="lib/angular.min.js"></script>	
+	<script src="app/app.js"></script>
+	<script src="app/controllers/party_controller.js"></script>
+	<script src="app/controllers/questions_controller.js"></script>
+	<script src="app/directives/reponses_directive.js"></script>
+	<script src="app/controllers/menu_controller.js"></script>
+	<script src="app/controllers/recap_controller.js"></script>
+	<body ng-app='birdquizz' class="grey darken-4">
+		<div class="site-container" id="oiseaux">
+		<!-- class:site-container -->
+ 			<div class="site-pusher">
+ 			<!-- class:site-pusher -->
+ 				<header class="header open" id="header">
+ 				<!-- class:header -->
+ 					<div class="header-content">
+ 					<!-- class:header-content -->
+ 						<div class="on_logo">
+ 							<a href="http://www.oiseaux.net/">
+ 								<img id="logo_img" src="http://www.oiseaux.net/front/images/oiseaux.net.png" width="246" height="154" alt="oiseaux" />
+ 							</a>
+ 						</div>
+						<div class="on_recherche search-open" id="on_recherche">
+ 						<!-- class:on_recherche -->
+ 							<div class="on_search">
+	 							<form id="search" action="http://www.oiseaux.net/search/" method="post">
+		 							<input type="text" id="term" name="term" title="mot(s) clé(s)" value="RECHERCHER SUR LE SITE" />
+		 							<input type="image" id="ok" name="ok" title="Rechercher" src="http://www.oiseaux.net/front/images/ok.png" alt="Rechercher" />
+	 							</form>
+ 							</div>
+ 						<!-- /class:on_recherche -->
+ 						</div>
+ 						<div class="on_fond_bandeau" id="on_fond_bandeau"></div>
+ 						<!-- div:loriot -->
+	 						<a href="#" class="header__icon" id="header__icon"></a>
+	 						<nav id="nav" class="nav nav-open">
+			 					<ul class="menu">
+				 					<li class="accueil" id="accueil">
+				 						<div><a href="http://www.oiseaux.net/"></a></div>
+				 					</li>
+				 					<li>
+				 						<a href="http://www.oiseaux.net/oiseaux/">Espèces</a>
+				 						<ul>
+						 					<li><a href="http://www.oiseaux.net/oiseaux/france.html">Liste des oiseaux de France</a></li>
+						 					<li><a href="http://www.oiseaux.net/oiseaux/europe.html">Liste des oiseaux d'Europe</a></li>
+						 					<li><a href="http://www.oiseaux.net/oiseaux/">Liste des oiseaux du monde</a></li>
+						 				</ul>
+				 					</li>
+				 					<li>
+				 						<a href="http://www.oiseaux.net/photos/">Photos</a>
+				 						<ul>
+				 							<li><a href="http://www.oiseaux.net/photos/oiseaux.france.index.html">Nouveautés de France</a></li>
+											<li><a href="http://www.oiseaux.net/photos/index.html">Nouveautés du Monde</a></li>
+											<li><a href="http://www.oiseaux.net/photos/photographes.html">Galeries des photographes</a></li>
+				 						</ul>
+				 					</li>
+				 					<li>
+				 						<a href="http://www.oiseaux.net/dossiers/">Dossiers</a>
+				 						<ul>
+				 							<li><a href="http://www.oiseaux.net/dossiers/ornithopedia/">Oiseau.info</a></li>
+					 						<li><a href="http://www.oiseaux.net/dossiers/ornithologie/">Ornithologie</a></li>
+					 						<li><a href="http://www.oiseaux.net/dossiers/protection/">Comment aider les oiseaux ?</a></li>
+											<li><a href="http://www.oiseaux.net/dossiers/gilbert.blaising/">Lorraine et histoires d'oiseaux</a></li>
+											<li><a href="http://www.oiseaux.net/dossiers/patrick.fichter/">Au fil de la plume</a></li>
+											<li><a href="http://www.oiseaux.net/dossiers/yves.thonnerieux/">Natur'ailes vous raconte</a></li>
+											<li><a href="http://www.oiseaux.net/dossiers/gaston.gast/">Les plumes</a></li>
+											<li><a href="http://www.oiseaux.net/dossiers/corneille.bigarree/">La corneille bigarrée</a></li>
+											<li><a href="http://www.oiseaux.net/dossiers/jean-michel.peers/">Brèves de terrain</a></li>
+											<li><a href="http://www.hirondelles.oiseaux.net/">Les hirondelles</a></li>
+											<li><a href="http://chouette.oiseaux.net/">Chouette d'Hémilly</a></li>
+				 						</ul>
+									</li>
+				 					<li>
+										<a href="http://www.oiseaux.net/dossiers/">Actu</a>
+										<ul>
+											<li><a href="http://www.oiseaux.net/util/maj.html">Nouveautés</a></li>
+											<li><a href="http://forum.oiseaux.net/">Forum</a></li>
+				 						</ul>
+				 					</li>
+				 					<li>
+										 <a href="http://www.oiseaux.net/jeux/">Jeux</a>
+										 <ul>
+											<li><a href="http://www.oiseaux.net/jeux/devine.html">L'oiseau mystère</a></li>
+											<li><a href="http://www.oiseaux.net/jeux/tete.de.linotte.html">Tête de linotte</a></li>
+											<li><a href="http://www.oiseaux.net/jeux/oiseau.chanteur.html">Oiseau chanteur</a></li>
+											<li><a href="http://www.oiseaux.net/jeux/puzzle.mesange.html">Puzzle</a></li>
+											<li><a href="http://www.oiseaux.net/jeux/mahjongg.html">Mah Jongg</a></li>
+											<li><a href="http://www.oiseaux.net/jeux/coloriages/">Coloriages</a></li>
+											<li><a href="#">Bird'Quizz</a></li>
+				 						</ul>
+				 					</li>
+				 					<li>
+				 						<a href="http://www.oiseaux.net/util/">Utile</a>
+				 						<ul>
+											<li><a href="http://www.oiseaux.net/identifier/">Aide à l'identification</a></li>
+											<li><a href="http://www.oiseaux.net/livres/">Une sélection de livres sur les oiseaux</a></li>
+											<li><a href="http://www.oiseaux.net/buffon/">Buffon et l'Histoire naturelle des oiseaux</a></li>
+											<li><a href="http://www.oiseaux.net/annuaire/">Annuaire ornitho</a></li>
+											<li><a href="http://www.oiseaux.net/glossaire/">Glossaire</a></li>
+											<li><a href="http://www.oiseaux.net/util/regles.deontologiques.html">Règles déontologiques</a> </li>
+											<li><a href="http://www.oiseaux.net/index.en.html">
+											<span class="on_uk">Version anglaise</span></a></li>
+											<li><a href="http://membre.oiseaux.net/">Espace membres</a></li>
+				 						</ul>
+				 					</li>
+				 					<li>
+				 						<div id="on_head_bt" class="on_head_up"></div>
+				 					</li>
+			 					</ul>
+	 						</nav>
+ 							<!-- ad_header --><!-- /ad_header -->
+ 					<!-- /class:header-content -->
+ 					</div>
+ 				<!-- /class:header -->
+ 				</header>
+ 				<div class="on_centre">
+ 				<!-- class:on_liste -->
+					<div class="on_article">
+		 				<div class="crumbs">
+			 				<ul itemscope itemtype="https://schema.org/BreadcrumbList" id="breadcrumb">
+			 					<li class="ariane" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="http://www.oiseaux.net/">
+			 						<span itemprop="name">Accueil</span></a>
+			 						<meta itemprop="position" content="1" />
+			 					</li>
+			 					<li class="ariane" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			 						<a href="http://www.oiseaux.net/jeux/"><span itemprop="name">Jeux</span></a>
+			 						<meta itemprop="position" content="2" />
+			 					</li>
+			 					<li class="last" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			 						<a href="http://www.oiseaux.net/jeux/"><span itemprop="name">Les jeux ornithos</span></a>
+			 						<meta itemprop="position" content="3" />
+			 					</li>
+			 				</ul>
+		 				</div>
+					</div>
+
+					<!-- BIRDQUIZZ -->
+					<!-- DIV POUR LE TITRE -->
+					<div class="col s10 m8 l6 center-align title blue-grey-text text-lighten-4"><h2>BIRD'QUIZZ</h2></div>
+
+					<!--  PARTYCONTROLLER  -->
+					<div ng-controller='PartyController' id='Party' class="row" ng-if="!played">
+						<!-- DIV POUR RENSEIGNER SON PSEUDO -->
+						<div class="input-field col l3 offset-l5 m6 offset-m3 s8 offset-s2">
+							<input type="text" name="pseudo" id="pseudo" ng-hide="played" ng-model="player.pseudo" class="blue-grey-text text-lighten-4">
+							<label ng-hide="played" for="pseudo" class="blue-text text-darken-1">Entrez votre pseudo</label>
+						</div>
+						<!-- DIV POUR BOUTTON JOUER -->
+						<div class="col s8 m6 l2 offset-l5 offset-m3 offset-s2 center-align">
+							<button class="btn waves-effect blue" ng-hide="played" ng-click="addParty()">JOUER <i class="material-icons right">play_circle_outline</i>
+							</button>
+						</div>
+						<!-- DIV POUR LES REGLES DU JEU -->						
+						<div class="col l8  m10 s12 offset-l2 offset-m1 center-align reglement">
+							<ul class="collapsible popout" data-collapsible="accordion">
+								<li>
+									<div class="collapsible-header blue-grey lighten-5"><i class="material-icons right">games</i>REGLES DU JEU<i class="material-icons left">games</i></div>
+									<div class="collapsible-body blue-grey lighten-4"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!--  MENUCONTROLLLER  -->
+					<div ng-controller='MenuController' id='menu' ng-if="played" class="blue-grey-text text-lighten-4">
+						<!-- DIV DU MESSAGE D'ACCUEIL -->
+						<div class="col s12 m12 l12 center-align flow-text msgAccueil">
+							<p class="blue-text text-darken-4 pseudonyme"> Bienvenue {{pseudo}}</p>
+							</br>
+							<p ng-if="serie==false" class="blue-text text-darken-4 niveau"> Choisissez votre niveau de difficulté : </p>
+						</div>
+						<!-- BOUTTON DES DIFFICULTES -->
+						<ul ng-if="serie==false">
+							<li> <button class="btn waves-effect blue butniv" ng-click="SendNiveau(1)"> Débutant </button> </li>					
+							<li> <button class="btn waves-effect blue butniv" ng-click="SendNiveau(2)"> Intermédiaire </button> </li>					
+							<li> <button class="btn waves-effect blue butniv" ng-click="SendNiveau(3)"> Expert </button> </li>					
+						</ul>
+					</div>
+
+					<!--  RECAPCONTROLLER  -->
+					<div ng-controller='RecapController' id='recap' ng-if="recap" class="blue-grey-text text-lighten-4">
+						<!-- DIV DU MESSAGE D'ACCUEIL -->
+						<div class="col s12 m12 l12 center-align flow-text msgAccueil">					
+							</br>
+							<p id="titrerecap" class="blue-text text-darken-4"> Récapitulatif </p>
+							</br>
+							<p class="col s6 m6 l6 center-align flow-text blue-text text-darken-2">Score : {{score}} </p>
+							<p class="col s6 m6 l6 center-align flow-text blue-text text-darken-2">Temps : {{min}} min {{sec}} sec</p>
+						</div>
+						</br>
+						<!-- TABLEAU RECAPITULATIF -->
+						<table id="tableau">
+							<!-- TITRE DES COLONNES -->
+							<tr>
+								<td>Numero</td>
+								<td>Question</td>
+								<td>photo</td>
+								<td>Réponse</td>
+								<td>Information</td>
+							</tr>
+							<!-- DONNES DU RECAP -->			
+							<tr ng-repeat="q in questions">	
+								<td>{{$index+1}}</td>
+								<td>{{q.text}}</td>
+								<td><img src="{{q.url}}" height="80px"/></td>
+								<td><h1>{{q.bonneRep}}</h1></td>
+								<td><a target="_blank" href="{{q.info}}">{{q.info}}</a></td>		
+							</tr>					
+						</table>
+						<!-- BOUTTON RECOMMENCER UNE PARTIE -->
+						<center><button id='next' class="btn waves-effect blue" ng-click="recommencer()">RECOMMENCER <i class="material-icons right">skip_next</i></button></center>
+					</div>		
+
+					<!--  QUESTIONSCONTROLLER  -->
+					<div ng-controller='QuestionsController' ng-if="quiz==true" class="blue-grey-text text-lighten-4">
+						<div class="row">
+							<!-- SCORE -->
+							<p class="blue-text text-darken-4" id="score"> Score : {{score}}</p>
+							<!-- DIV POUR LA QUESTION -->				
+							<div class="col s12 m12 l12 center-align flow-text msgAccueil">
+								<h6 id="quest2"> Question {{i+1}} : </h6> <p id="quest">{{quest}}</p><img id="imgQuest" ng-if="repPhoto==1" src="{{url}}" width="250px"/>	
+							</div>
+							<!-- DIV POUR LES REPONSES -->
+							<div class="reponses" ng-repeat='reponse in rep'><reponse></div>
+							<!-- BOUTTON QUESTION SUIVANTE -->
+							<center><button id='next' class="btn waves-effect blue" ng-if="clic" ng-click="nextQuestion()">QUESTION SUIVANTE <i class="material-icons right">skip_next</i></button></center>
+							<!-- DIV POUR LES INFORMATIONS SUPPLEMENTAIRE -->		
+							<div id="info" ng-if="clic==true"><a target="_blank" href="{{info}}"> <--- PLUS D'INFORMATIONS PAR ICI ---> </a></div>
+						</div>
+						<script type="text/javascript" src="js/bin/materialize.min.js"></script>
+					</div>
+
+					<footer class="on_pieddepage">
+ 					<!-- class:on_pieddepage -->
+ 						<div class="on_pdp">
+ 							<div class="on_links_txt">
+ 								<div class="on_mesange"></div>
+ 								<div class="on_news_pdp">
+ 									<p>Nouveautés</p>
+ 									<ul>
+										<li><!-- derniere fiche --><a href="http://www.oiseaux.net/oiseaux/traquet.brun.html" title="Traquet brun">Fiche : Traquet brun</a>
+										<!-- /derniere fiche --></li>
+										<li><!-- derniere photo --><a href="http://www.oiseaux.net/photos/sylvain.uriot/manakin.noir.1.html">Photo : Manakin noir</a>
+										<!-- /derniere photo --></li>
+										<li><!-- dernier dossier --><a href="http://www.oiseaux.net/dossiers/patrick.fichter/saisons.d.oiseaux.html" title="Saisons d'oiseaux">Dossier : Saisons d'oiseaux</a>
+										<!-- /dernier dossier --></li>
+										<li><!-- news:dernier mois --><a href="http://www.oiseaux.net/rss/2017/2017-03-18.html">News : mars 2017</a>
+										<!-- /news:dernier mois --></li>
+									</ul>
+ 								</div>
+ 								<div class="on_utile">
+ 									<p>Aide</p>
+ 									<ul>
+ 										<li><a href="http://www.oiseaux.net/faq.html">Foire aux questions</a></li>
+									</ul>
+ 								</div>
+ 								<div class="on_apropos">
+ 									<p>À propos</p>
+ 									<ul>
+ 										<li><a href="http://www.oiseaux.net/presentation.html">Qui sommes nous ?</a></li>
+ 										<li><a href="http://www.oiseaux.net/util/nous.aider.html">Nous aider</a></li>
+ 										<li><a href="http://www.oiseaux.net/mentions.legales.html">Mentions légales</a></li>
+ 										<li><a href="http://www.oiseaux.net/sources.html">Nos sources</a></li>
+ 									</ul>
+ 								</div>
+ 								<div>
+ 									<a class="on_amaz" href="https://www.amazon.fr/gp/product/2603023934?ie=UTF8&camp=1642&creativeASIN=2603023934&linkCode=xm2&tag=oiseauxnet-21">
+ 									</a>
+ 								</div>
+ 							</div>
+ 							<div class="nav_icons">
+ 								<div class="on_follow">
+ 									<ul>
+										<li class="on_tw"><a href="http://www.twitter.com/oiseaux_net"><span>Suivez-nous sur Twitter</span></a></li>
+										<li class="on_fb"><a href="http://www.facebook.com/share.php?u=http://www.oiseaux.net/"><span>Partagez sur Facebook</span></a></li>
+										<li class="on_gl"><a href="https://plus.google.com/share?url=http://www.oiseaux.net/&amp;hl=fr"><span>Partagez sur Google+</span></a></li>
+										<li class="on_rss"><a href="http://www.oiseaux.net/rss/actu.xml"><span>Abonnez-vous</span> </a></li>
+										<li class="on_mail"><a href="http://www.oiseaux.net/contact.html"><span>Contact</span></a></li>
+ 									</ul>
+ 								</div>
+ 								<div class="on_links">
+ 									<ul>
+										<li class="on_home"><a href="http://www.oiseaux.net/"><span>Accueil</span></a></li>
+										<li class="on_membre"><a href="http://membre.oiseaux.net/"><span>Espace membres</span></a></li>
+										<li class="on_forum"><a href="http://forum.oiseaux.net/"><span>Forum</span></a></li>
+										<li class="on_imprime"><a href="http://www.oiseaux.net/imprime/"><span>Imprimer</span></a></li>
+										<li class="on_haut"><a href="#oiseaux"><span>&nbsp;</span></a></li>
+ 									</ul>
+ 								</div>
+ 								<div class="on_droits">
+ 									<p id="on_pix">
+ 										Mis à jour le <!-- maj -->19/03/2017 03:52:41<!-- /maj -->
+ 										<br />Tous droits réservés © 1996-<!-- annee -->2017<!-- /annee --> - <a href="http://www.oiseaux.net/">Oiseaux.net</a>
+ 									</p>
+ 								</div>
+ 							</div>
+ 						</div>
+ 					<!-- /class:on_pieddepage -->
+ 					</footer>
+ 				<!-- /class:site-pusher -->
+ 				</div>
+			<!-- /class:site-container -->
+			</div>
+			<!-- js:mp3 --><!-- /js:mp3 -->
+			<!-- oiseaux-analytics-js -->
+			<script src="http://www.oiseaux.net/front/js/analytics.20170309.js" async></script>
+			<!-- /oiseaux-analytics-js -->
+			<!-- oiseaux-js -->
+			<script src="http://www.oiseaux.net/front/js/oiseaux.net.20170221.js" async></script>
+			<!-- /oiseaux-js -->
+			<script type="text/javascript" src="puzzle_utf8.js"></script>
+	</body>
+</html>
+

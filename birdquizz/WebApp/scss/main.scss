@@ -1,0 +1,181 @@
+@import "reset";
+
+titrerecap{
+  text-align: center;
+}
+
+#tableau{
+  border:2px solid #696969 ;
+  color: #696969;
+}
+
+#tableau td{
+  border:2px solid #696969 ;
+  text-align: center;
+  vertical-align: middle;  
+}
+
+
+.title {
+  font-size: 2.5em;
+  margin-top: 0.5em;
+  margin-bottom: 1em; }
+
+.pseudonyme{
+  text-align: center;
+  font-size: 0.75em;
+  margin-bottom: 1em;
+}
+
+.niveau{
+  margin-left:2em;
+  font-size: 0.75em;
+}
+
+.butniv {
+  width: 250px;
+  margin-top:0.6em;
+}
+
+.repimage{
+  width: 100px;
+  height: 250px;
+}
+
+.rep1{
+  margin-top: 1.5em;
+  font-size: 0.55em;
+}
+
+
+
+.rep0{
+  margin-top: 1.5em;
+  font-size: 0.55em;
+}
+
+.repImage0{
+  margin-top: 1.5em;
+}
+
+.repImage1{
+  margin-top: 1.5em;
+}
+
+#imgQuest{
+  margin-top:1em;
+  width: 250px;
+  height: 250px;
+}
+
+#score{
+  font-size: 0.9em;
+  padding-left: 10%;
+}
+
+
+#info{
+  text-align: center;
+  color: #696969;
+  margin-top:1em;
+}
+
+#term{
+  height: 1em;
+  margin: 0;
+padding: 0;
+border: 0;
+}
+
+#menu{
+  text-align: center;
+}
+
+#quest{
+  text-align: center;
+  color: #696969;
+}
+
+#quest2{
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: #696969;
+  font-size: 0.85em;
+}
+
+#next{
+  margin-top: 1.5em;
+}
+
+#Party {
+  margin-top: 8em;
+  opacity: 1;
+  position: relative; }
+
+.msgAccueil {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+#pseudo:focus {
+
+  border-bottom: 1px solid #2196f3;
+  box-shadow: 0 1px 0 0 #2196f3;
+}
+
+
+
+.addParty {
+  margin-bottom: 2em; }
+
+.reglement {
+  margin-top: 2em; color: #696969;}
+
+.ng-scope {
+  text-decoration-color: black; }
+
+
+
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 45%;
+  left: 36%; }
+
+@media screen and (min-width: 590px) and (max-width: 1280px) {
+  #toast-container {
+    left: 15%;
+    bottom: 10%; } }
+@media screen and (max-width: 590px) {
+  #toast-container {
+    bottom: 0;
+    left: 0;
+    text-align: center; } }
+#formCo {
+  width: 30%;
+  margin-top: 2em;
+  margin-left: 35%; }
+
+#form {
+  width: 60%;
+  margin-top: 5em;
+  margin-left: 20%; }
+  #form h5 {
+    font-size: 0.6em; }
+
+.goodAnswerText{
+  color: #00FF00;
+}
+
+.wrongAnswerText{
+  color:red;
+}
+
+.goodAnswerImage{
+  border : 3px solid #00FF00;
+  padding: 0;
+}
+
+.wrongAnswerImage{
+  border : 3px solid red;
+  padding: 0;
+}

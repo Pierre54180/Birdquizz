@@ -1,0 +1,6 @@
+<!-- BUTTON REPONSES TYPE 1 -->
+<button class="col s10 m4 l4 offset-s1 offset-m2 offset-l2 pull-l1 pull-m1 btn waves-effect blue btnreponse rep{{reponse.valide}}" ng-if="reponse.type==1" ng-model="valide" ng-click="verifReponse(reponse.valide)">{{reponse.label}}</button>
+
+<!-- IMG REPONSES TYPE 2 -->
+<img src="{{reponse.url}}" class="col s10 m4 l4 offset-s1 offset-m2 offset-l2 pull-l1 pull-m1 repImage{{reponse.valide}} repimage" ng-if="reponse.type==0" ng-model="valide" ng-click="verifReponse(reponse.valide)"/>
+
